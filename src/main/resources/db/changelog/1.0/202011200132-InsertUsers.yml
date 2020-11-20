@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202011200132-InsertUsers
+      author: Alexandre Peron
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: password
+                  value: $2a$10$LfL8MZmiZtV1dTcj/pAFnu6jvuBaQ4A3u5o62u4cfekvW1nuo3a2C
+              - column:
+                  name: enabled
+                  value: true
+            tableName: User
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: user
+              - column:
+                  name: password
+                  value: $2a$10$LfL8MZmiZtV1dTcj/pAFnu6jvuBaQ4A3u5o62u4cfekvW1nuo3a2C
+              - column:
+                  name: enabled
+                  value: true
+            tableName: User

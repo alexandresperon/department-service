@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 202011200130-CreateTableUser
+    author: Alexandre Peron
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: username
+            type: varchar(50)
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: PK_Username
+        - column:
+            name: password
+            type: varchar(255)
+            constraints:
+                nullable: false
+        - column:
+              name: enabled
+              type: boolean
+              constraints:
+                  nullable: false
+        tableName: User

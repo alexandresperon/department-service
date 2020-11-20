@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202011200133-InsertAuthorities
+      author: Alexandre Peron
+      changes:
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: admin
+              - column:
+                  name: authority
+                  value: ROLE_ADMIN
+            tableName: UserAuthority
+        - insert:
+            columns:
+              - column:
+                  name: username
+                  value: user
+              - column:
+                  name: authority
+                  value: ROLE_USER
+            tableName: UserAuthority

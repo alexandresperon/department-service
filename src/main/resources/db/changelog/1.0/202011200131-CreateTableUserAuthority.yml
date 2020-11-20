@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 202011200131-CreateTableUserAuthority
+      author: Alexandre Peron
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: username
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: authority
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+            tableName: UserAuthority
+        - addPrimaryKey:
+            columnNames: username, authority
+            constraintName: PK_UserAuthority
+            tableName: UserAuthority
+        - addForeignKeyConstraint:
+            baseColumnNames: username
+            baseTableName: UserAuthority
+            constraintName: FK_UserAuthority_User
+            referencedColumnNames: username
+            referencedTableName: User

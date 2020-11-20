@@ -5,3 +5,15 @@ databaseChangeLog:
 - include:
     file: 202011141305-CreateTableDepartment.yml
     relativeToChangelogFile: true
+- include:
+      file: 202011200130-CreateTableUser.yml
+      relativeToChangelogFile: true
+- include:
+      file: 202011200131-CreateTableUserAuthority.yml
+      relativeToChangelogFile: true
+- include:
+    file: 202011200132-InsertUsers.yml
+    relativeToChangelogFile: true
+- include:
+    file: 202011200133-InsertAuthorities.yml
+    relativeToChangelogFile: true
