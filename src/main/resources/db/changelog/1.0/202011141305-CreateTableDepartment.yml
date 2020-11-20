@@ -1,0 +1,30 @@
+databaseChangeLog:
+- changeSet:
+    id: 202011141305-CreateTableDepartment
+    author: Alexandre Peron
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigint
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: PK_Department
+        - column:
+            name: name
+            type: varchar(255)
+        - column:
+            name: board
+            type: smallint
+        - column:
+            name: address_id
+            type: bigint
+        tableName: Department
+    - addForeignKeyConstraint:
+        baseColumnNames: address_id
+        baseTableName: Department
+        constraintName: FK_Department_Address
+        referencedColumnNames: id
+        referencedTableName: Address

@@ -1,0 +1,7 @@
+databaseChangeLog:
+- include:
+    file: 202011141300-CreateTableAddress.yml
+    relativeToChangelogFile: true
+- include:
+    file: 202011141305-CreateTableDepartment.yml
+    relativeToChangelogFile: true

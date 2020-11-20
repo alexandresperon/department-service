@@ -1,0 +1,28 @@
+server:
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: department-service
+  mvc:
+    locale: pt_BR
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yml
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5432/postgres
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        show_sql: true
+        globally_quoted_identifiers: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+management:
+  endpoint:
+    health:
+      show-details: always
